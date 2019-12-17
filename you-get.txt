@@ -10,4 +10,4 @@ What you-get can do for you:
 *  Download videos / audios from popular websites such as YouTube, Youku, Niconico, and a bunch more. (See the full list of supported sites)
  *  Stream an online video in your media player. No web browser, no more ads.
  *  Download images (of interest) by scraping a web page.
- *  Download arbitrary non-HTML contents, i.e., binary files.
+ *  Download arbitrary non-HTML contents, i.e., binary files. //what is up
