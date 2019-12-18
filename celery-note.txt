@@ -16,5 +16,28 @@ Worker 是执行任务的处理单元，它实时监控消息队列，获取队�
 任务结果存储 Backend
 Backend 用于存储任务的执行结果，以供查询。同消息中间件一样，存储也可使用 RabbitMQ, Redis 和 MongoDB 等。
 
-三.配置详解
-dfafasfadfadgf
+三.安装配置详解
+# 同时启动 worker 和 beat
+# celery -B -A celerybase worker -l INFO
+# 启动 worker
+# celery worker -A celerybase -l INFO
+# 启动 beat
+# celery beat -A celerybase -l INFO
+# 显示光标  echo -e "\033[?25h"
+
+# 安装 django-celery:  pip install django-celery
+# 启动worker: python manage.py celery worker -l INFO
+# 问题1：AttributeError: 'str' object has no attribute 'items'
+# redis版本问题，降低版本  redis (2.10.6)
+# 问题2：超时问题
+# pip install  -i http://pypi.douban.com/simple/ --trusted-host pypi.douban.com  -r requirements.txt
+
+# 启动beat: python manage.py celery beat -l INFO
+# 安装 flower: pip install flower
+# 启动flower: python manage.py celery flower
+
+# 安装配置: pip install supervisord  配置管理worker，beat，flower的工具
+# echo_supervisord_conf > conf/supervisord.conf
+# 启动: supervisord -c conf/supervisord.conf
+# 命令行: supervisorctl
+
